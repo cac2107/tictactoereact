@@ -36,6 +36,7 @@ body {
 .title {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 h1 {
@@ -56,6 +57,7 @@ h2 {
   color: #f9d3b4;
   font-family: var(--font-raleway);
   font-size: 2rem;
+  text-align: center;
 }
 
 .tic-tac-toe-container {
