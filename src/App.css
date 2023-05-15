@@ -7,6 +7,11 @@ body {
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container{
   padding: 4rem;
 
   display: flex;
@@ -16,11 +21,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  .app {
+  .app-container {
     flex-direction: column;
   }
 }
-
 .main-container {
   display: flex;
   align-items: center;
@@ -33,7 +37,7 @@ body {
  width: 50px; 
 }
 
-.title {
+#title-bar{
   display: flex;
   justify-content: center;
   text-align: center;

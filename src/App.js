@@ -147,28 +147,28 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="main-container">
-        <p className="current-player">Selected: {selected}</p>
-        <p className="current-player">Current Turn: {turn}</p>
-        <p id="player-title">Choose Player</p>
-        <PlayerSelect onPlayerSelect={handlePlayerSelect}/>
-      </div>
-      <div className="main-container">
-        <div className="title">
-          <h1>Tic Tac Toe AI</h1>
+      <div id="title-bar"><h1>Tic Tac Toe AI</h1></div>
+      <div className="app-container">
+        <div className="main-container">
+          <p className="current-player">Selected: {selected}</p>
+          <p className="current-player">Current Turn: {turn}</p>
+          <p id="player-title">Choose Player</p>
+          <PlayerSelect onPlayerSelect={handlePlayerSelect}/>
         </div>
-        <div className="tic-tac-toe-container">
-            <div className="tic-tac-toe">
-              {squares.map((value, index) => (
-                <Square key = {index} turn = {turn} onClick={() => handleSquareClick(index)} finished = {finished} reset = {resetBool} setResetBool = {setResetBool} val = {value} selected = {selected}/>
-              ))}
+        <div className="main-container">
+          <div className="tic-tac-toe-container">
+              <div className="tic-tac-toe">
+                {squares.map((value, index) => (
+                  <Square key = {index} turn = {turn} onClick={() => handleSquareClick(index)} finished = {finished} reset = {resetBool} setResetBool = {setResetBool} val = {value} selected = {selected}/>
+                ))}
+              </div>
             </div>
-          </div>
-        {allSquaresFilled || winner ? <h2>Winner: {winner === null ? `Draw!`: winner}</h2> : <h2>Game in progress...</h2>}
-        <button id="reset-button" onClick={reset}>Reset</button>
-      </div>
-      <div className="main-container">
-        <ScoreBoard player = "AI Scores" vals = {aiScoreBoard}/>
+          {allSquaresFilled || winner ? <h2>Winner: {winner === null ? `Draw!`: winner}</h2> : <h2>Game in progress...</h2>}
+          <button id="reset-button" onClick={reset}>Reset</button>
+        </div>
+        <div className="main-container">
+          <ScoreBoard player = "AI Scores" vals = {aiScoreBoard}/>
+        </div>
       </div>
     </div>
     
